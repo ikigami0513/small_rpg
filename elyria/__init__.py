@@ -14,3 +14,4 @@ from elyria.sprite_renderer import SpriteRenderer
 from elyria.text_renderer import Character, TextRenderer
 from elyria.texture2d import Texture2D
 from elyria.animation import Animation
+from elyria.input import Key, Input

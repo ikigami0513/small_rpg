@@ -4,6 +4,7 @@ from glfw import _GLFWwindow as GLFWwindow
 from pygame import mixer
 from elyria.game import Game as GameClass
 from elyria.resource_manager import ResourceManager
+from elyria.input import Input, Key
 from typing import Optional
 
 import platform
@@ -21,10 +22,10 @@ def key_callback(window: GLFWwindow, key: int, scancode: int, action: int, mode:
 
     if key >= 0 and key < 1024:
         if action == GLFW_PRESS:
-            game.keys[key] = True
+            Input.set_pressed(Key(key), True)
         elif action == GLFW_RELEASE:
-            game.keys[key] = False
-            game.keys_processed[key] = False
+            Input.set_pressed(Key(key), False)
+            Input.set_processed(Key(key), False)
 
 
 def framebuffer_size_callback(window: GLFWwindow, width: int, height: int) -> None:
