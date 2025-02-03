@@ -43,16 +43,6 @@ class SmallRPG(Game):
         self.player.update(dt)
 
     def render(self):
-        self.renderer.draw_sprite(
-            ResourceManager.get_texture("background"),
-            glm.vec2(0.0, 0.0),
-            glm.vec2(self.width, self.height),
-            0.0
-        )
-
-        # TODO : recréer le spritesheet characters.png pour ajouter à la fin le sprite du milieu pour fluidifier l'animation
-        # TODO : actuellement : pied droit => idle => pied gauche
-        # TODO : nécessaire   : pied droit => idle => pied gauche => idle
         self.player.draw(self.renderer)
 
     def gui_render(self):
